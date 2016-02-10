@@ -1,0 +1,5 @@
+<launch>
+    <include file="$(find stdr_launchers)/launch/server_with_map_and_gui_plus_robot.launch"/>
+    <node name="path_service" pkg="my_ros_service" type="path_service.py"/>
+    <node name="path_client" pkg="my_ros_service" type="path_client.py"/>
+</launch>

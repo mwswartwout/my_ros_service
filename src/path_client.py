@@ -103,19 +103,14 @@ def main():
         pose = generate_pose(7, quaternion)
         path.poses.append(stamp_pose(pose))
 
-        # quaternion = convertPlanarPhiToQuaternion(3.14)
-        # pose.orientation = quaternion
-        # path.poses.append(stampPose(pose))
-
         response = client(stamp_path(path))
 
     except rospy.ServiceException, e:
         rospy.logerr("Service exception, %s", e)
 
 
-
-if __name__ == '__main__' :
-    try :
+if __name__ == '__main__':
+    try:
         main()
-    except rospy.ROSInterruptException :
+    except rospy.ROSInterruptException:
         pass
